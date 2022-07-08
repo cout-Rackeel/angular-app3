@@ -1,0 +1,27 @@
+<p class="studentstyle">  Welcome {{studentName}} to our beginner Angular course </p>
+
+
+<div>
+
+  <label for=""> Student Name </label>
+  <br>
+  <input type="text" class="form-control" [(ngModel)] = "studentName" >
+  <br>
+  <input type="text" class="form-control" (input)="onUpdateStudentNameEvent($event)">
+
+  <p>{{studentName}}</p>
+
+  <div>
+  <button class="btn btn-success" [disabled]="!allowAdd" (click)="onAddStudentClick()">Add student</button>
+  <button class="btn btn-primary" style="margin-left: 10px ;" (click)="onUpdateStudentName($event)" >Update Student</button>
+  </div>
+
+  <div>
+    <p *ngIf="studentAdded; else notAdded">{{studentAddStatus}}</p>
+    <ng-template #notAdded>No Student has been added.</ng-template>
+  </div>
+
+</div>
+
+
+cout-Rackeel
